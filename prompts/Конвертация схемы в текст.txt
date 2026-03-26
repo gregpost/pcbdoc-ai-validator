@@ -1,0 +1,151 @@
+Шаг #6
+Обработка строк #3-#4 из #5
+
+<<<WORD_COUNT>>> = #7 # максимальное количество слов в описании схемы подключения пина
+
+<<<TASK_DESCRIPTION>>> START
+Во входном файле <<<INPUT_FOR_PROCESS>>> приведены теги пинов чипа, который содержит множество
+внутренних тегов. Тебе необходимо обработать внутренние теги с назанием <<<*_SCHEME>>>, то есть
+все теги с постфиксом "_SCHEME". Необходимо сформировать файл на примере <<<OUTPUT_EXAMPLE>>>
+c той же системой тегов, но внутри тегов <<<*_SCHEME>>> вместо текстовой схемы должно быть 
+словесное описание не более <<<WORD_COUNT>>> слов о том, как подключен данный пин. 
+<<<TASK_DESCRIPTION>>> END
+
+---
+
+Ниже приведен пример входного файла:
+<<<INPUT_EXAMPLE>>> START
+
+<<<AR9331_B14>>> START
+[NAME] = ...
+[DEV_SCHEME] START
+AR9331-AR9331_B14-R37_1-R37-R37_2-BY25Q16BSTIG_6-U2(
+  R44-AR9331_B6,
+  C22-C6
+)
+[DEV_SCHEME] END
+[REF_SCHEME]
+{другая электрическая схема}
+[REF_SCHEME] END
+[SOME_TAG_1] START
+text...
+[SOME_TAG_1] END
+...
+[<SOME_TAG_N] START
+text...
+[<SOME_TAG_N] END
+<<<AR9331_B14>>> END
+
+<<<AR9331_B50>>> START
+[NAME] = SOME_NAME
+[DEV_SCHEME] START
+AR9331-AR9331_B50-ZD25Q64BS1_5-ZD25Q64BS1
+[DEV_SCHEME] END
+[REF_SCHEME]
+{другая электрическая схема}
+[REF_SCHEME] END
+[SOME_TAG_1] START
+text...
+[SOME_TAG_1] END
+...
+[<SOME_TAG_N] START
+text...
+[<SOME_TAG_N] END
+<<<AR9331_B50>>> END
+
+<<<AR9331_A57>>> START
+[NAME] = SOME_NAME
+[DEV_SCHEME] START
+AR9331-AR9331_A57-SPI_MOSI-U3_5-U3(
+  U3_1-!SPI_CS_0-AR9331_B49,
+  U3_3-!SPI_W-R62_2-R62-R62_1-+3V3(
+    SOT23-3_2-SOT23-3,
+    R95_1
+  )
+)
+[DEV_SCHEME] END
+[REF_SCHEME]
+{другая электрическая схема}
+[REF_SCHEME] END
+[SOME_TAG_1] START
+text...
+[SOME_TAG_1] END
+...
+[<SOME_TAG_N] START
+text...
+[<SOME_TAG_N] END
+<<<AR9331_A57>>> END
+
+<<<INPUT_EXAMPLE>>> END
+
+---
+
+Ниже приведён пример формирования ответа:
+<<<OUTPUT_EXAMPLE>>> START
+
+<<<AR9331_B14>>> START
+[NAME] = ...
+[DEV_SCHEME] START
+Пин B14 AR9331 через резистор R37 подключен к 54 выводу DDR памяти U2.
+[DEV_SCHEME] END
+[REF_SCHEME]
+{другая электрическая схема}
+[REF_SCHEME] END
+[SOME_TAG_1] START
+text...
+[SOME_TAG_1] END
+...
+[<SOME_TAG_N] START
+text...
+[<SOME_TAG_N] END
+<<<AR9331_B14>>> END
+
+<<<AR9331_B50>>> START
+[NAME] = SOME_NAME
+[DEV_SCHEME] START
+Пин B50 AR9331 соединен с 5 выводом flash памяти ZD25Q64BS1.
+[DEV_SCHEME] END
+[REF_SCHEME]
+{другая электрическая схема}
+[REF_SCHEME] END
+[SOME_TAG_1] START
+text...
+[SOME_TAG_1] END
+...
+[<SOME_TAG_N] START
+text...
+[<SOME_TAG_N] END
+<<<AR9331_B50>>> END
+
+<<<AR9331_A57>>> START
+[NAME] = SOME_NAME
+[DEV_SCHEME] START
+Пин A57 AR9331 соединен с 5 выводом flash U3. Вывод 3 U3 через резистор R62 подтянут к питанию 3.3В.
+[DEV_SCHEME] END
+[REF_SCHEME]
+{другая электрическая схема}
+[REF_SCHEME] END
+[SOME_TAG_1] START
+text...
+[SOME_TAG_1] END
+...
+[<SOME_TAG_N] START
+text...
+[<SOME_TAG_N] END
+<<<AR9331_A57>>> END
+
+<<<OUTPUT_EXAMPLE>>> END
+
+---
+
+Ниже приведен файл, который ты должен преобразовать в соотетствии с <<<OUTPUT_EXAMPLE>>>:
+<<<INPUT_FOR_PROCESS>>> START
+
+#1
+
+<<<INPUT_FOR_PROCESS>>> END
+
+---
+
+Шаг #6
+Обработка строк #3-#4 из #5

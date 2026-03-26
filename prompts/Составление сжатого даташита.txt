@@ -1,0 +1,65 @@
+<<<STRINGS>>> = Обработка строк #3-#4 из #5
+
+<<<COMPONENT>>> = AR9331
+
+<<<TASK_DESCRIPTION>>> START
+
+Составь описание подключения  пинов <<<COMPONENT>>> согласно <<<FRAGMENT_OF_DATASHEET>>>.
+Не пиши в ответе ничего, кроме данного описания согласно <<<OUTPUT_EXAMPLE>>>.
+Включай в ответ все пины из <<<COMPONENT_PINS>>>. 
+Если <<<FRAGMENT_OF_DATASHEET>>> не включает описание какого-то пина, то напиши для данного пина:
+<<<AR9331_B63>>> START
+<<<NAME>>> = VDD12
+<<<AR9331_B63_DATASHEET>>> START
+NO_DATA
+<<<AR9331_B63_DATASHEET>>> END
+<<<AR9331_B63>>> END
+
+<<<TASK_DESCRIPTION>>> END
+
+---
+
+Вот фрагмент даташита на <<<COMPONENT>>> (строки #3-#4 из #5):
+<<<FRAGMENT_OF_DATASHEET>>> START
+
+#1
+
+<<<FRAGMENT_OF_DATASHEET>>> END
+
+---
+
+Ниже приведён пример формирования ответа:
+<<<OUTPUT_EXAMPLE>>> START
+
+<<<AR9331_A72>>> START
+<<<NAME>>> = RESETL
+<<<AR9331_A72_DATASHEET>>> START
+Original citations from datasheet
+text text text text text text...
+text text text ...
+<<<AR9331_A72_DATASHEET>>> END
+<<<AR9331_A72>>> END
+
+
+<<<AR9331_B2>>> START
+<<<NAME>>> = ...
+<<<AR9331_B2_DATASHEET>>> START
+...
+<<<AR9331_B2_DATASHEET>>> END
+<<<AR9331_B2>>> END
+
+...
+
+<<<OUTPUT_EXAMPLE>>> END
+
+---
+
+Ниже приведен список всех пинов <<<COMPONENT>>>:
+
+<<<COMPONENT_PINS>>> START
+
+#2
+
+<<<COMPONENT_PINS>>> END
+
+<<<STRINGS>>> = Обработка строк #3-#4 из #5
